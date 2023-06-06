@@ -1,23 +1,23 @@
 
 import 'package:flutter/material.dart';
+import 'package:module_5_assignment/screens/home_one.dart';
 import 'package:module_5_assignment/screens/home_three.dart';
-import 'package:module_5_assignment/screens/home_two.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class HomeScreen2 extends StatefulWidget {
+  const HomeScreen2({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<HomeScreen2> createState() => _HomeScreen2State();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreen2State extends State<HomeScreen2> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
         length: 3,
         child: Scaffold(
           appBar: AppBar(
-            title: Text('Home Page One'),
+            title: Text('Home Page Two'),
             centerTitle: true,
             bottom: const TabBar(
               tabs: [
@@ -84,33 +84,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen3()));
                   },
                 ),
-
               ],
             ),
           ),
           floatingActionButton: FloatingActionButton(
             child: Icon(Icons.add),
-            backgroundColor: Colors.deepPurple,
+            backgroundColor: Colors.amberAccent,
             onPressed: () {  },
-          ),
-          bottomNavigationBar: BottomNavigationBar(
-            items: const  [
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: "Page01", ),
-              BottomNavigationBarItem(icon: Icon(Icons.contact_mail), label: "Page02", ),
-              BottomNavigationBarItem(icon: Icon(Icons.person), label: "Page03", ),
-            ],
-            currentIndex: 1,
-            onTap: (int index){
-              if(index == 0){
-                Navigator.push(context,  MaterialPageRoute(builder: (context) => HomeScreen()));
-              }
-              if(index == 1){
-                Navigator.push(context,  MaterialPageRoute(builder: (context) => HomeScreen2()));
-              }
-              if(index == 2){
-                Navigator.push(context,  MaterialPageRoute(builder: (context) => HomeScreen3()));
-              }
-            },
           ),
         )
     );

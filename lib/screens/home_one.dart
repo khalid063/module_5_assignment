@@ -27,37 +27,16 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          body: const TabBarView(
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.directions_car),
-                  SizedBox(height: 20),
-                  Text('Car'),
-                ],
+          body: Center(
+            child: Container(
+              child: const Text(
+                'Page No : 1',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.deepOrange
+                ),
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.directions_transit),
-                  SizedBox(height: 20),
-                  Text('Train'),
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.directions_bike),
-                  SizedBox(height: 20),
-                  Text('Bicycle'),
-                ],
-              ),
-              // Icon(Icons.directions_car),
-              // Text('Home One'),
-              // Icon(Icons.directions_transit),
-              // Icon(Icons.directions_bike),
-            ],
+            ),
           ),
           drawer: Drawer(
             child: ListView(
@@ -71,14 +50,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
                 ListTile(
-                  leading: Icon(Icons.contact_mail),
+                  leading: Icon(Icons.home_outlined),
                   title: Text("Page 02"),
                   onTap: (){
                     Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen2()));
                   },
                 ),
                 ListTile(
-                  leading: Icon(Icons.person),
+                  leading: Icon(Icons.home_repair_service),
                   title: Text("Page 03"),
                   onTap: (){
                     Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen3()));
@@ -88,6 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
+          //floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
           floatingActionButton: FloatingActionButton(
             child: Icon(Icons.add),
             backgroundColor: Colors.deepPurple,
@@ -99,7 +79,8 @@ class _HomeScreenState extends State<HomeScreen> {
               BottomNavigationBarItem(icon: Icon(Icons.contact_mail), label: "Page02", ),
               BottomNavigationBarItem(icon: Icon(Icons.person), label: "Page03", ),
             ],
-            currentIndex: 1,
+            currentIndex: 0,
+            selectedItemColor: Colors.deepPurpleAccent,
             onTap: (int index){
               if(index == 0){
                 Navigator.push(context,  MaterialPageRoute(builder: (context) => HomeScreen()));
